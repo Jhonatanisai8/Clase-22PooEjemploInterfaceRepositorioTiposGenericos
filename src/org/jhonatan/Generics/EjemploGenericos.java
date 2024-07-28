@@ -23,18 +23,23 @@ public class EjemploGenericos {
 
         Integer[] enterosArreglo = { 1, 2, 34, 5, 6, 7, 8 };
 
-        /*LLamamos al metodo estatico de esta misma clase */
+        /* LLamamos al metodo estatico de esta misma clase */
         List<Cliente> clientesLista = fromArrayToList(clientesArreglo);
         List<Integer> enterosLista = fromArrayToList(enterosArreglo);
 
-        /*mostramos */
+        /* mostramos */
         System.out.println("Lista de clientes: \n");
         clientesLista.forEach(System.out::println);
 
         System.out.println("Lista de enteros\n");
         enterosLista.forEach(System.out::println);
-        
-        
+        System.out.println();
+
+        /* Porvando el segundo metodo */
+        List<String> nombresLista = fromArrayToList(new String[] { "Luci", "Pedro", "Alberto", "Juan" },
+                enterosArreglo);
+        System.out.println("Lista de nombres: ");
+        nombresLista.forEach(System.out::println);
 
     }
 
@@ -42,6 +47,14 @@ public class EjemploGenericos {
 
     /* indicamos con el <T> que es de tipo generico */
     public static <T> List<T> fromArrayToList(T[] c) {
+        return Arrays.asList(c);
+    }
+
+    /* uno itera e imprimi, el otro convierte */
+    public static <T, G> List<T> fromArrayToList(T[] c, G[] x) {
+        for (G g : x) {
+            System.out.println(g);
+        }
         return Arrays.asList(c);
     }
 }
