@@ -5,10 +5,32 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.jhonatan.pooInterface.Modelo.Cliente;
+import org.jhonatan.pooInterface.Modelo.ClientePremiun;
 
 public class EjemploGenericos {
     public static void main(String[] args) {
         System.out.println("EJEMPLOS CON TIPOS GENERICOS");
+        ejemploClientes();
+    }
+
+    public static void ejemploClientes() {
+        Cliente[] clientesArreglo = { new Cliente("Ana", "Martinez"),
+                new Cliente("Juan", "Arevalo"),
+                new Cliente("David", "Paz") };
+
+        List<Cliente> clientesLista = fromArrayToList(clientesArreglo);
+        List<ClientePremiun> clientesPremiunLista = fromArrayToList(new ClientePremiun[] {
+                new ClientePremiun("Juan", "Perez"),
+                new ClientePremiun("Daniel", "Flores")
+        });
+
+        System.out.println("Lista de clientes Normales");
+        clientesLista.forEach(System.out::println);
+        System.out.println("Lista de clientes Premiun");
+        clientesPremiunLista.forEach(System.out::println);
+    }
+
+    public static void ejemplosGenerales() {
 
         /* Creamos una lista de clientes */
         List<Cliente> clientes = new ArrayList<>();
@@ -42,7 +64,6 @@ public class EjemploGenericos {
         nombresLista.forEach(System.out::println);
 
     }
-
     /* metodos para convertir un arreglo a lista */
 
     /* indicamos con el <T> que es de tipo generico limitado solo a números */
@@ -52,6 +73,10 @@ public class EjemploGenericos {
 
     /* metodo no limitado */
     public static <T> List<T> fromArrayToList(T[] c) {
+        return Arrays.asList(c);
+    }
+
+    public static <T extends Cliente> List<T> fromArrayToList(T[] c) {
         return Arrays.asList(c);
     }
 
