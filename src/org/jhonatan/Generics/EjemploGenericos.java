@@ -28,7 +28,7 @@ public class EjemploGenericos {
         /* clientesLista.forEach(System.out::println); */
         imprimirClientes(clientesLista);
         System.out.println("Lista de clientes Premiun");
-        clientesPremiunLista.forEach(System.out::println);
+        imprimirClientes(clientesPremiunLista);
     }
 
     public static void ejemplosGenerales() {
@@ -97,7 +97,9 @@ public class EjemploGenericos {
         return Arrays.asList(c);
     }
 
-    public static void imprimirClientes(List<Cliente> clientes) {
+    /*ahora puede imprimir tanto clientes y clientes premiun */
+    public static void imprimirClientes(List<? extends Cliente> clientes) {
         clientes.forEach(System.out::println);
     }
+
 }
