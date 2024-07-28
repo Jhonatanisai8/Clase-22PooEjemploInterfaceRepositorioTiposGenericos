@@ -25,7 +25,8 @@ public class EjemploGenericos {
         });
 
         System.out.println("Lista de clientes Normales");
-        clientesLista.forEach(System.out::println);
+        /* clientesLista.forEach(System.out::println); */
+        imprimirClientes(clientesLista);
         System.out.println("Lista de clientes Premiun");
         clientesPremiunLista.forEach(System.out::println);
     }
@@ -76,7 +77,14 @@ public class EjemploGenericos {
         return Arrays.asList(c);
     }
 
-    /*metodo que es para cliente y ademas de la interface comparable */
+    /*
+     * este metodo es lo mismo que el de abajo
+     * public static List<Cliente> fromArrayToList(Cliente[] c) {
+     * return Arrays.asList(c);
+     * }
+     */
+
+    /* metodo que es para cliente y ademas de la interface comparable */
     public static <T extends Cliente & Comparable> List<T> fromArrayToList(T[] c) {
         return Arrays.asList(c);
     }
@@ -87,5 +95,9 @@ public class EjemploGenericos {
             System.out.println(g);
         }
         return Arrays.asList(c);
+    }
+
+    public static void imprimirClientes(List<Cliente> clientes) {
+        clientes.forEach(System.out::println);
     }
 }
