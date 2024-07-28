@@ -76,7 +76,8 @@ public class EjemploGenericos {
         return Arrays.asList(c);
     }
 
-    public static <T extends Cliente> List<T> fromArrayToList(T[] c) {
+    /*metodo que es para cliente y ademas de la interface comparable */
+    public static <T extends Cliente & Comparable> List<T> fromArrayToList(T[] c) {
         return Arrays.asList(c);
     }
 
