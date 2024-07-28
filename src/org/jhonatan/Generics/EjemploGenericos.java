@@ -45,7 +45,12 @@ public class EjemploGenericos {
 
     /* metodos para convertir un arreglo a lista */
 
-    /* indicamos con el <T> que es de tipo generico */
+    /* indicamos con el <T> que es de tipo generico limitado solo a números */
+    public static <T extends Number> List<T> fromArrayToList(T[] c) {
+        return Arrays.asList(c);
+    }
+
+    /* metodo no limitado */
     public static <T> List<T> fromArrayToList(T[] c) {
         return Arrays.asList(c);
     }
