@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.jhonatan.pooInterface.Modelo.Cliente;
 
-public  abstract class AbstractaListRepositorio<T> implements OrdenablePaginableCrud<T> {
+public abstract class AbstractaListRepositorio<T> implements OrdenablePaginableCrud<T> {
 
-    private List<Cliente> dataSource;
+    protected List<T> dataSource;
 
     // constructor
     public AbstractaListRepositorio() {
@@ -15,21 +15,21 @@ public  abstract class AbstractaListRepositorio<T> implements OrdenablePaginable
     }
 
     @Override
-    public List<Cliente> listar() {
+    public List<T> listar() {
         return dataSource;
     }
 
-    @Override
-    public Cliente porId(Integer id) {
-        Cliente c = null;
-        for (Cliente cliente : dataSource) {
-            if (cliente.getId() != null && cliente.getId().equals(id)) {
-                c = cliente;
-                break;
-            }
-        }
-        return c;
-    }
+    // @Override
+    // public Cliente porId(Integer id) {
+    //     Cliente c = null;
+    //     for (Cliente cliente : dataSource) {
+    //         if (cliente.getId() != null && cliente.getId().equals(id)) {
+    //             c = cliente;
+    //             break;
+    //         }
+    //     }
+    //     return c;
+    // }
 
     @Override
     public void crear(Cliente cliente) {
