@@ -1,9 +1,11 @@
 package org.jhonatan.GenericsClass;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class Camion {
+// implementa la interface Iterable
+public class Camion implements Iterable {
     private List objetos;
     private int max;
 
@@ -19,6 +21,11 @@ public class Camion {
         } else {
             throw new RuntimeException("No hay mas espacio en el camion: ");
         }
+    }
+
+    @Override
+    public Iterator iterator() {
+        return this.objetos.iterator(); 
     }
 
 }
