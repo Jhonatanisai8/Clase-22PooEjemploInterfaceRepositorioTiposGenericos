@@ -1,7 +1,7 @@
 package org.jhonatan.pooInterface.Repositori;
 
-public interface OrdenablePaginableCrud extends OrdenableRepositorio,
-        PaginableRepositorio, CrudRepositorio, Contable {
+public interface OrdenablePaginableCrud<T> extends OrdenableRepositorio<T>,
+        PaginableRepositorio<T>, CrudRepositorio<T>, Contable {
 
             
 }
