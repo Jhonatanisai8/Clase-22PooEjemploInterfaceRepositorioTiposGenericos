@@ -1,7 +1,7 @@
 import java.util.List;
 
 import org.jhonatan.pooInterface.Modelo.Cliente;
-import org.jhonatan.pooInterface.Repositori.AbstractaListRepositorio;
+import org.jhonatan.pooInterface.Repositori.ClienteListRepositorio;
 import org.jhonatan.pooInterface.Repositori.Direccion;
 import org.jhonatan.pooInterface.Repositori.OrdenablePaginableCrud;
 
@@ -13,7 +13,7 @@ public class EjemploRepositorio {
     static void EjemploRepositorio1() {
 
         /* Creamos el repositorio */
-        OrdenablePaginableCrud repo = new AbstractaListRepositorio();
+        OrdenablePaginableCrud<Cliente> repo = new ClienteListRepositorio();
 
         /* agregamos personas */
 
@@ -30,12 +30,12 @@ public class EjemploRepositorio {
         System.out.println();
 
         /* Listamos */
-        System.out.println("===LISTAMOS LOS CLLIENTES===\n");
+        System.out.println("=============LISTAMOS LOS CLLIENTES=============\n");
         List<Cliente> clientes = repo.listar();
         clientes.forEach(System.out::println);
 
         int desde = 0, hasta = 5;
-        System.out.println("=====PAGINABLE DESDE EL " + desde + " HASTA EL " + hasta + " ====\n");
+        System.out.println("=============PAGINABLE DESDE EL " + desde + " HASTA EL " + hasta + "============= \n");
         List<Cliente> paginable = repo.listar(desde, hasta);
         paginable.forEach(System.out::println);
         System.out.println();
@@ -43,7 +43,7 @@ public class EjemploRepositorio {
         /* Ordenamos */
         String campo = "apellido";
         Direccion direcion = Direccion.ASC;
-        System.out.println("=====ORDENANADO POR " + campo + " en forma " + direcion + " =====\n");
+        System.out.println("=============ORDENANADO POR " + campo + " en forma " + direcion + " =============\n");
         List<Cliente> clientesOrdenable = repo.listar(campo, direcion);
         for (Cliente cliente : clientesOrdenable) {
             System.out.println(cliente);
@@ -52,7 +52,7 @@ public class EjemploRepositorio {
         System.out.println();
 
         /* Editando */
-        System.out.println("===EDITANDO===\n");
+        System.out.println("=============EDITANDO=============\n");
         int idEditar = 3;
         Cliente anaActualizar = new Cliente("Ana", "Marquez");
         System.out.println("Editando el cliente con id: " + idEditar);
@@ -61,11 +61,11 @@ public class EjemploRepositorio {
         System.out.println();
 
         /* Mostramos de nuevo la lista */
-        System.out.println("===MOSTRANDO LA LISTA ACTUALIZADA===\n");
+        System.out.println("=============MOSTRANDO LA LISTA ACTUALIZADA=============\n");
         repo.listar("id", Direccion.ASC).forEach(System.out::println);
 
         System.out.println();
-        System.out.println("===BUSCANDO UN REGISTRO===\n");
+        System.out.println("=============BUSCANDO UN REGISTRO=============\n");
         int id = 12;
         System.out.println("Buscando el cliente con id: " + id);
         Cliente cienteBuscar = repo.porId(id);
@@ -77,17 +77,17 @@ public class EjemploRepositorio {
         System.out.println();
 
         /* Eliminando */
-        System.out.println("==ELIMINAR==");
+        System.out.println("=============ELIMINAR=============");
         int idEliminar = 2;
         System.out.println("Eliminando el cliente con id: " + idEliminar);
         repo.eliminar(idEliminar);
         System.out.println();
 
-        System.out.println("=== LISTANDO ===\n");
+        System.out.println("============= LISTANDO =============\n");
         repo.listar().forEach(System.out::println);
         System.out.println();
 
-        System.out.println("======TOTAL DE REGISTROS=====");
+        System.out.println("=============TOTAL DE REGISTROS=============");
         System.out.println(repo.total());
 
     }
