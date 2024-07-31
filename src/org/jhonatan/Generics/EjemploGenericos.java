@@ -10,7 +10,14 @@ import org.jhonatan.pooInterface.Modelo.ClientePremiun;
 public class EjemploGenericos {
     public static void main(String[] args) {
         System.out.println("EJEMPLOS CON TIPOS GENERICOS");
-        ejemploClientes();
+        // ejemploClientes();
+        ejemploMaximo();
+    }
+
+    public static void ejemploMaximo(){
+        System.out.println("El maximo de 3, 5, 8 es: "+maximo(3, 5, 8));
+        System.out.println("El maximo de 4.5, 9.7, 7.8 es: "+maximo(4.5, 9.7, 7.8));
+        System.out.println("Maximo de zanahoria,pera,arandano: "+maximo("zanahoria", "pera", "arandano"));
     }
 
     public static void ejemploClientes() {
