@@ -17,10 +17,7 @@ public class EjemploClases {
         transporteCaballos.add(new Animal("Tunquen", "Caballo"));
         transporteCaballos.add(new Animal("TopoCalma", "Caballo"));
         transporteCaballos.add(new Animal("LongoToma", "Caballo"));
-
-        for (Animal animal : transporteCaballos) {
-            System.out.println("- " + animal.getNombre() + ", Tipo " + animal.getTipo());
-        }
+        imprimirCamion(transporteCaballos);
 
     }
 
@@ -32,10 +29,7 @@ public class EjemploClases {
         trasporteMaquinaria.add(new Maquinaria("Buldozer"));
         trasporteMaquinaria.add(new Maquinaria("Grua Orquilla"));
         trasporteMaquinaria.add(new Maquinaria("Perfovadora"));
-
-        for (Maquinaria maquinaria : trasporteMaquinaria) {
-            System.out.println("- " + maquinaria.getTipo());
-        }
+        imprimirCamion(trasporteMaquinaria);
     }
 
     public static void ejemploCamnionAuto() {
@@ -48,8 +42,19 @@ public class EjemploClases {
         transporteAutoMoviles.add(new Auto("Pagani"));
         transporteAutoMoviles.add(new Auto("Audi"));
 
-        for (Auto auto : transporteAutoMoviles) {
-            System.out.println("- " + auto.getMarca());
+        imprimirCamion(transporteAutoMoviles);
+    }
+
+    // metodo generico
+    public static <T> void imprimirCamion(Camion<T> camion) {
+        for (T t : camion) {
+            if (t instanceof Animal) {
+                System.out.println("- " + ((Animal) t).getNombre() + ", Tipo: " + ((Animal) t).getTipo());
+            } else if (t instanceof Maquinaria) {
+                System.out.println("- " + ((Maquinaria) t).getTipo());
+            } else if (t instanceof Auto) {
+                System.out.println("- " + ((Auto) t).getMarca());
+            }
         }
     }
 }
