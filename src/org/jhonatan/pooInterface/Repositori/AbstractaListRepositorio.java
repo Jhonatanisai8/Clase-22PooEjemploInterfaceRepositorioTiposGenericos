@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.jhonatan.pooInterface.Modelo.Cliente;
 
-public abstract class AbstractaListRepositorio<T> implements OrdenablePaginableCrud<T> {
+public  abstract class AbstractaListRepositorio<T> implements OrdenablePaginableCrud<T> {
 
     private List<Cliente> dataSource;
 
