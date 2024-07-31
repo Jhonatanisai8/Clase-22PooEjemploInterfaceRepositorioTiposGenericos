@@ -1,7 +1,7 @@
 import java.util.List;
 
 import org.jhonatan.pooInterface.Modelo.Cliente;
-import org.jhonatan.pooInterface.Repositori.ClienteListRepositorio;
+import org.jhonatan.pooInterface.Repositori.AbstractaListRepositorio;
 import org.jhonatan.pooInterface.Repositori.Direccion;
 import org.jhonatan.pooInterface.Repositori.OrdenablePaginableCrud;
 
@@ -13,7 +13,7 @@ public class EjemploRepositorio {
     static void EjemploRepositorio1() {
 
         /* Creamos el repositorio */
-        OrdenablePaginableCrud repo = new ClienteListRepositorio();
+        OrdenablePaginableCrud repo = new AbstractaListRepositorio();
 
         /* agregamos personas */
 
