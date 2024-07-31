@@ -10,7 +10,7 @@ public class EjemploClases {
 
     public static void ejemploCamionAnimales() {
         System.out.println("=========TRANSPORTE DE ANIMALES=========");
-        Camion transporteCaballos = new Camion(5);
+        Camion<Animal> transporteCaballos = new Camion<>(5);
         // agregamos objetos
         transporteCaballos.add(new Animal("Perigrino", "Caballo"));
         transporteCaballos.add(new Animal("Grillo", "Caballo"));
@@ -18,10 +18,7 @@ public class EjemploClases {
         transporteCaballos.add(new Animal("TopoCalma", "Caballo"));
         transporteCaballos.add(new Animal("LongoToma", "Caballo"));
 
-
-        for (Object object : transporteCaballos) {
-            // casteamos
-            Animal animal = (Animal) object;
+        for (Animal animal : transporteCaballos) {
             System.out.println("- " + animal.getNombre() + ", Tipo " + animal.getTipo());
         }
 
@@ -30,22 +27,20 @@ public class EjemploClases {
     public static void ejemploCamionMaquinaria() {
 
         System.out.println("=========TRASPORTE DE CAMIONES=========");
-        Camion trasporteMaquinaria = new Camion(3);
+        Camion<Maquinaria> trasporteMaquinaria = new Camion<>(3);
 
         trasporteMaquinaria.add(new Maquinaria("Buldozer"));
         trasporteMaquinaria.add(new Maquinaria("Grua Orquilla"));
         trasporteMaquinaria.add(new Maquinaria("Perfovadora"));
 
-        for (Object object : trasporteMaquinaria) {
-            // casteamos
-            Maquinaria maquinaria = (Maquinaria) object;
+        for (Maquinaria maquinaria : trasporteMaquinaria) {
             System.out.println("- " + maquinaria.getTipo());
         }
     }
 
     public static void ejemploCamnionAuto() {
         System.out.println("========TRASPORTE DE AUTOMOVILES========");
-        Camion transporteAutoMoviles = new Camion(5);
+        Camion<Auto> transporteAutoMoviles = new Camion<>(5);
 
         transporteAutoMoviles.add(new Auto("Ferrari"));
         transporteAutoMoviles.add(new Auto("Lamborguine"));
@@ -53,8 +48,7 @@ public class EjemploClases {
         transporteAutoMoviles.add(new Auto("Pagani"));
         transporteAutoMoviles.add(new Auto("Audi"));
 
-        for (Object object : transporteAutoMoviles) {
-            Auto auto = (Auto) object;
+        for (Auto auto : transporteAutoMoviles) {
             System.out.println("- " + auto.getMarca());
         }
     }
