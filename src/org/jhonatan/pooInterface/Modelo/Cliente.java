@@ -1,10 +1,11 @@
 package org.jhonatan.pooInterface.Modelo;
 
-public class Cliente {
+public class Cliente extends BaseEntity {
     private String nombre;
     private String apellido;
-  
+
     public Cliente(String nombre, String apellido) {
+        super();
         this.nombre = nombre;
         this.apellido = apellido;
     }
