@@ -2,17 +2,16 @@ package org.jhonatan.pooInterface.Repositori;
 
 import java.util.List;
 
-import org.jhonatan.pooInterface.Modelo.Cliente;
+// clase generica <T>
+public interface CrudRepositorio<T> {
+    List<T> listar();
 
-public interface CrudRepositorio {
-    List<Cliente> listar();
+    T porId(Integer id);
 
-    Cliente porId(Integer id);
+    void crear(T cliente);
 
-    void crear(Cliente cliente);
-
-    void editar(Cliente cliente);
+    void editar(T cliente);
 
     void eliminar(Integer id);
-    
+
 }
