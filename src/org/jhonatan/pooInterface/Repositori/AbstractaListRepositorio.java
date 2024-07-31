@@ -17,17 +17,17 @@ public abstract class AbstractaListRepositorio<T> implements OrdenablePaginableC
         return dataSource;
     }
 
-    // @Override
-    // public Cliente porId(Integer id) {
-    // Cliente c = null;
-    // for (Cliente cliente : dataSource) {
-    // if (cliente.getId() != null && cliente.getId().equals(id)) {
-    // c = cliente;
-    // break;
-    // }
-    // }
-    // return c;
-    // }
+    @Override
+    public T porId(Integer id) {
+        T c = null;
+        for (T cliente : dataSource) {
+            if (cliente.getId() != null && cliente.getId().equals(id)) {
+                c = cliente;
+                break;
+            }
+        }
+        return c;
+    }
 
     @Override
     public void crear(T t) {
