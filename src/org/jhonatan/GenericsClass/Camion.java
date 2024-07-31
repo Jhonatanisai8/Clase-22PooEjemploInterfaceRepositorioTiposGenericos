@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 
 // implementa la interface Iterable
-public class Camion implements Iterable {
-    private List objetos;
+public class Camion<T> implements Iterable<T> {
+    private List<T> objetos;
     private int max;
 
     public Camion(int max) {
@@ -14,7 +14,7 @@ public class Camion implements Iterable {
         this.objetos = new ArrayList<>();
     }
 
-    public void add(Object object) {
+    public void add(T object) {
         // si el tamaño de la lista es menor a la cantidad maxima
         if (this.objetos.size() <= max) {
             this.objetos.add(object);
@@ -24,8 +24,8 @@ public class Camion implements Iterable {
     }
 
     @Override
-    public Iterator iterator() {
-        return this.objetos.iterator(); 
+    public Iterator<T> iterator() {
+        return this.objetos.iterator();
     }
 
 }
