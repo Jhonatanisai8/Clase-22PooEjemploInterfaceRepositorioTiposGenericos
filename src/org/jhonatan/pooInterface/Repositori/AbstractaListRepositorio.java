@@ -3,7 +3,9 @@ package org.jhonatan.pooInterface.Repositori;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractaListRepositorio<T> implements OrdenablePaginableCrud<T> {
+import org.jhonatan.pooInterface.Modelo.BaseEntity;
+
+public abstract class AbstractaListRepositorio<T extends BaseEntity> implements OrdenablePaginableCrud<T> {
 
     protected List<T> dataSource;
 
