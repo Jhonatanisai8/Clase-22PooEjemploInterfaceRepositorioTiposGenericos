@@ -2,9 +2,9 @@ package org.jhonatan.pooInterface.Modelo;
 
 public class Producto extends BaseEntity {
     private String descripcion;
-    private double precio;
+    private Double precio;
 
-    public Producto(String descripcion, double precio) {
+    public Producto(String descripcion, Double precio) {
         super();
         this.descripcion = descripcion;
         this.precio = precio;
@@ -18,17 +18,17 @@ public class Producto extends BaseEntity {
         this.descripcion = descripcion;
     }
 
-    
-    public double getPrecio() {
+    public Double getPrecio() {
         return precio;
     }
-    
-    public void setPrecio(double precio) {
+
+    public void setPrecio(Double precio) {
         this.precio = precio;
     }
+
     @Override
     public String toString() {
-        return "Id = "+id+", Descripcion=" + descripcion + ", Precio=" + precio;
+        return "Id = " + id + ", Descripcion=" + descripcion + ", Precio=" + precio;
     }
 
 }
