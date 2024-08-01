@@ -1,9 +1,11 @@
-package org.jhonatan.pooInterface.Repositori;
+package org.jhonatan.pooInterface.Repositori.Lista;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.jhonatan.pooInterface.Modelo.Cliente;
+import org.jhonatan.pooInterface.Repositori.AbstractaListRepositorio;
+import org.jhonatan.pooInterface.Repositori.Direccion;
 
 public class ClienteListRepositorio extends AbstractaListRepositorio<Cliente> {
 

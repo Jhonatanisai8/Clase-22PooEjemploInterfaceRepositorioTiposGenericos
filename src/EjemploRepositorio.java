@@ -1,9 +1,9 @@
 import java.util.List;
 
 import org.jhonatan.pooInterface.Modelo.Cliente;
-import org.jhonatan.pooInterface.Repositori.ClienteListRepositorio;
 import org.jhonatan.pooInterface.Repositori.Direccion;
 import org.jhonatan.pooInterface.Repositori.OrdenablePaginableCrud;
+import org.jhonatan.pooInterface.Repositori.Lista.ClienteListRepositorio;
 
 public class EjemploRepositorio {
     public static void main(String[] args) throws Exception {
