@@ -32,11 +32,11 @@ public class BaseEntity {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Cliente other = (Cliente) obj;
+        BaseEntity base = (BaseEntity) obj;
         if (id == null) {
-            if (other.id != null)
+            if (base.id != null)
                 return false;
-        } else if (!id.equals(other.id))
+        } else if (!id.equals(base.id))
             return false;
         return true;
     }
