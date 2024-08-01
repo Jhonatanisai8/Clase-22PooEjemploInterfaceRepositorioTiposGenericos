@@ -41,7 +41,7 @@ public class Ejemplo_Repositorio_Productos {
         System.out.println();
 
         /* Ordenamos */
-        String campo = "descripcion";
+        String campo = "precio";
         Direccion direcion = Direccion.ASC;
         System.out.println("=============ORDENANADO POR " + campo + " en forma " + direcion + " =============\n");
         List<Producto> productos2ordenable = repo.listar(campo, direcion);
@@ -71,7 +71,7 @@ public class Ejemplo_Repositorio_Productos {
         Producto productoBuscar = repo.porId(id);
         if (productoBuscar != null) {
             System.out.println(productoBuscar);
-            
+
         } else {
             System.out.println("Registro con id no encontrado.");
         }
